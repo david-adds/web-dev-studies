@@ -1,15 +1,13 @@
-function add (n1: number, n2: number, showResult: boolean, msg: string){
-    if (showResult){
-        console.log(`${msg} ${n1 + n2}`);
-    }else{
-        return n1 + n2;
-    }
-}
+/*============ Object Type =============*/
+// const person: {
+//     name: string;
+//     lastName: string;
+// } = {
 
-const number1 =  5;
-const number2 = 2.8;
-const printResult = true;
-const message = 'Result is: '
+const person ={
+    name: 'David',
+    lastName: 'Souza'
+};
 
-add(number1, number2, printResult, message);
-
+console.log(person);
+console.log(person.lastName);
