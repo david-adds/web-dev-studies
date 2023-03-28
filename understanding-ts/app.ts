@@ -1,13 +1,16 @@
 /*============ Object Type =============*/
-// const person: {
-//     name: string;
-//     lastName: string;
-// } = {
-
-const person ={
-    name: 'David',
+const person: {
+    name: string;
+    lastName: string;
+    age: number;
+    hobbies: string[];
+    role: [number, string] //tupple type
+} = {
+    name: 'Nathalie',
     lastName: 'Souza',
-    hobbies: ['hiking', 'chess']
+    age: 32,
+    hobbies: ['hiking', 'chess', 'crochet'],
+    role: [2, 'author']
 };
 
 let favoriteFood: string[];
@@ -19,3 +22,5 @@ console.log(person.lastName);
 for (const hobby of person.hobbies) {
     console.log(hobby.toUpperCase());
 }
+person.role.push('admin');
+console.log(person.role);
