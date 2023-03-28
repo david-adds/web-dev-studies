@@ -7,3 +7,6 @@ function printResult(num) {
 }
 ;
 printResult(add(5, 65));
+var combineValues;
+combineValues = add;
+console.log(combineValues(8, 8));
