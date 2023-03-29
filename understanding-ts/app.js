@@ -10,4 +10,5 @@ function generateError(msg, code) {
     throw { message: msg, errorCode: code };
     // while (true) {}
 }
-generateError('An error ocurred', 500);
+// generateError('An error ocurred', 500);
+console.log(userInput);
