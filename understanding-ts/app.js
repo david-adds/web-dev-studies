@@ -1,12 +1,13 @@
-var userInput;
-var userName;
-userInput = 7;
+"use strict";
+let userInput;
+let userName;
+userInput = 8;
 userInput = 'John Wick';
 if (typeof userInput === 'string') {
     userName = userInput;
 }
 function generateError(msg, code) {
     throw { message: msg, errorCode: code };
+    // while (true) {}
 }
-var result = generateError('An error ocurred', 500);
-console.log(result);
+generateError('An error ocurred', 500);
