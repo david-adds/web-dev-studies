@@ -1,14 +1,8 @@
 "use strict";
-let userInput;
-let userName;
-userInput = 8;
-userInput = 'John Wick';
-if (typeof userInput === 'string') {
-    userName = userInput;
+const button = document.querySelector('button');
+function clickHandler(message) {
+    console.log('Clicked! ' + message);
 }
-function generateError(msg, code) {
-    throw { message: msg, errorCode: code };
-    // while (true) {}
+if (button) {
+    button.addEventListener('click', clickHandler.bind(null, "You\'re welcome"));
 }
-// generateError('An error ocurred', 500);
-console.log(userInput);
