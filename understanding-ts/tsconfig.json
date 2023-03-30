@@ -114,7 +114,7 @@
     // "basics.ts"
   ],
   "include": [
-    "app.ts",
+    "src/app.ts",
     "src/analytics.ts"
   ]
 }

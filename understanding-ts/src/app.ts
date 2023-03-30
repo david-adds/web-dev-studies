@@ -1,17 +1,15 @@
-let  userInput: unknown;
-let userName: string;
+const button = document.querySelector('button')!;
 
-userInput = 8;
-userInput = 'John Wick';
-if (typeof userInput === 'string') {
-    userName = userInput;
+function clickHandler(message: string) {
+    console.log('Clicked! ' + message);
 }
 
-function generateError(msg: string, code: number): never {
-    throw {message: msg, errorCode: code};
-    // while (true) {}
+if (button) {
+    button.addEventListener('click', clickHandler.bind(null, "You\'re welcome"));
 }
 
-// generateError('An error ocurred', 500);
-
-console.log(userInput);
+// if (button) {
+//     button.addEventListener('click', () => {
+//         console.log('Clicked!');
+//     });
+// }
