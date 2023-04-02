@@ -14,3 +14,10 @@ const person = {
 };
 const copiedPerson = Object.assign({}, person);
 console.log(copiedPerson);
+const addv2 = (...numbers) => {
+    return numbers.reduce((curResult, curValue) => {
+        return curResult + curValue;
+    }, 0);
+};
+const addedNumbers = addv2(5, 10, 12, 7);
+console.log(addedNumbers);
