@@ -7,3 +7,16 @@ const printOutput = (output: string | number) => {
 }
 
 printOutput(add(5));
+
+const hobbies = ['Sports', 'Movies', 'Comic books'];
+const activeHobbies = ['Hiking'];
+
+activeHobbies.push(...hobbies); //Similar to the extent method of a list in python
+
+const person = {
+    name: 'Nat',
+    age: 32
+};
+
+const copiedPerson = {...person};
+console.log(copiedPerson);
