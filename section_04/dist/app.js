@@ -9,7 +9,7 @@ const hobbies = ['Sports', 'Movies', 'Comic books'];
 const activeHobbies = ['Hiking'];
 activeHobbies.push(...hobbies);
 const person = {
-    name: 'Nat',
+    firstName: 'Nat',
     age: 32
 };
 const copiedPerson = Object.assign({}, person);
@@ -21,3 +21,7 @@ const addv2 = (...numbers) => {
 };
 const addedNumbers = addv2(5, 10, 12, 7);
 console.log(addedNumbers);
+const [hobby1, hobby2, ...remainingHobbies] = hobbies;
+console.log(hobbies, hobby1, hobby2);
+const { firstName: userName, age } = person;
+console.log(userName, age, person);

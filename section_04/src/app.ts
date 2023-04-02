@@ -14,7 +14,7 @@ const activeHobbies = ['Hiking'];
 activeHobbies.push(...hobbies); //Similar to the extent method of a list in python
 
 const person = {
-    name: 'Nat',
+    firstName: 'Nat',
     age: 32
 };
 
@@ -29,3 +29,13 @@ const addv2 = (...numbers: number[]) => {
 
 const addedNumbers = addv2(5, 10, 12, 7);
 console.log(addedNumbers);
+
+// Array Destucturing
+const [hobby1, hobby2, ...remainingHobbies] = hobbies;
+
+console.log(hobbies, hobby1, hobby2);
+
+// Object Destucturing
+const {firstName: userName, age} = person; //Alias username
+
+console.log(userName, age, person);
