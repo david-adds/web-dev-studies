@@ -1,4 +1,5 @@
 class Department {
+    static fiscalYear = 2023;
     // private readonly id: string;
     // private name: string;
     protected employees: string[] = [];
@@ -6,7 +7,12 @@ class Department {
     constructor(private readonly id: string, public name: string) {
         // this.id = id;
         // this.name = n;
+        // console.log(Department.fiscalYear);
     }  
+
+    static createEmployee(name: string) {
+        return {name: name}
+    }
 
     describe (this: Department) {
         console.log(`Department ${this.id}: ${this.name}`);
@@ -77,6 +83,10 @@ accounting.addEmployee('Jane Doe');
 // accounting.employees[2]='Anna';
 accounting.describe();
 accounting.printEmployeeInformation();
+
+
+const employee1 = Department.createEmployee('Alison');
+console.log(employee1, Department.fiscalYear);
 
 const ITDept = new ITDepartment('d2',['David']);
 ITDept.addEmployee('Bobby');
