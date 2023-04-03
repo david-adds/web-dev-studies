@@ -1,10 +1,10 @@
-class Department {
+ abstract class Department {
     static fiscalYear = 2023;
     // private readonly id: string;
     // private name: string;
     protected employees: string[] = [];
 
-    constructor(private readonly id: string, public name: string) {
+    constructor(protected readonly id: string, public name: string) {
         // this.id = id;
         // this.name = n;
         // console.log(Department.fiscalYear);
@@ -14,9 +14,7 @@ class Department {
         return {name: name}
     }
 
-    describe (this: Department) {
-        console.log(`Department ${this.id}: ${this.name}`);
-    }
+    abstract describe(this: Department): void;
 
     addEmployee(employee: string) {
         //validation etc
@@ -36,6 +34,9 @@ class ITDepartment extends Department {
     constructor(id: string, admins: string[]) {
         super(id, 'IT');
         this.admins = admins;
+    }
+    describe () {
+        console.log(`IT Department ${this.id}: ${this.name}`);
     }
 }
 
@@ -60,6 +61,11 @@ class AccountingDepartment extends Department {
         super(id, 'Accounting');
         this.lastReport = reports[0];
     }
+
+    describe () {
+        console.log(`Accounting Department ${this.id}: ${this.name}`);
+    }
+    
     addEmployee(name: string) {
         if (name === 'Bobby') {
             return;
@@ -77,31 +83,24 @@ class AccountingDepartment extends Department {
     }
 }
 
-const accounting = new Department('d1','Accounting');
-accounting.addEmployee('John Doe');
-accounting.addEmployee('Jane Doe');
-// accounting.employees[2]='Anna';
-accounting.describe();
-accounting.printEmployeeInformation();
-
 
 const employee1 = Department.createEmployee('Alison');
 console.log(employee1, Department.fiscalYear);
 
-const ITDept = new ITDepartment('d2',['David']);
-ITDept.addEmployee('Bobby');
-ITDept.addEmployee('Rachel');
+const ITDept = new ITDepartment('d1',['David']);
+ITDept.addEmployee('John Doe');
+ITDept.addEmployee('Jane Doe');
 ITDept.describe();
 ITDept.printEmployeeInformation();
 
-const accountingDept = new AccountingDepartment('d3', []);
+const accountingDept = new AccountingDepartment('d2', []);
 accountingDept.describe();
 
 accountingDept.mostRecentReport = 'Year End Report';
 accountingDept.addReport('Something went wrong!');
 console.log(accountingDept.mostRecentReport);
 
-accountingDept.addEmployee('Bobby');
+accountingDept.addEmployee('Rachel');
 accountingDept.addEmployee('Cinthia');
 accountingDept.addEmployee('Jordan')
 accountingDept.printReports();
