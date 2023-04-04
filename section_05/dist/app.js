@@ -7,12 +7,19 @@ console.log(add(2, 5));
 class Person {
     constructor(n) {
         this.age = 30;
-        this.name = n;
+        if (n) {
+            this.name = n;
+        }
     }
     greet(phrase) {
-        console.log(`${phrase} ${this.name}`);
+        if (this.name) {
+            console.log(`${phrase} ${this.name}`);
+        }
+        else {
+            console.log('Hey there!');
+        }
     }
 }
 let user1;
-user1 = new Person('John Doe');
+user1 = new Person();
 user1.greet("Hi there, I'm");
