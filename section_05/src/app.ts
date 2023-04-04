@@ -19,6 +19,6 @@ class Person implements Greetable {
 let user1: Greetable;
 
 user1 = new Person('John Doe');
-user1.name = 'Bruce Wayne';
+// user1.name = 'Bruce Wayne';
 
 user1.greet("Hi there, I'm");
